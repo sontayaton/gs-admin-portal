@@ -8,7 +8,7 @@
 
           <div v-if="alertOpen" class="text-white px-6 py-4 border-0 rounded relative mb-4 bg-red-600">
             <span class="text-xl inline-block mr-5 align-middle">
-              <i class="fas fa-bell"></i>
+              <i class="fas fa-exclamation-triangle"></i>
             </span>
             <span class="inline-block px-3 align-middle mr-8">
               <b class="capitalize">{{error_message}}</b> 

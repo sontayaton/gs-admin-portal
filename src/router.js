@@ -12,7 +12,8 @@ import Dashboard from "@/views/admin/Dashboard.vue";
 import Settings from "@/views/admin/Settings.vue";
 import Tables from "@/views/admin/Tables.vue";
 import Maps from "@/views/admin/Maps.vue";
-
+import Users from "@/views/admin/Users.vue";
+import Permissions from "@/views/admin/Permissions.vue"
 // views for Auth layout
 
 import Login from "@/views/auth/Login.vue";
@@ -22,7 +23,7 @@ import Register from "@/views/auth/Register.vue";
 
 import Landing from "@/views/Landing.vue";
 import Profile from "@/views/Profile.vue";
-import Index from "@/views/Index.vue";
+//import Index from "@/views/Index.vue";
 
 Vue.use(VueRouter)
 
@@ -30,11 +31,20 @@ Vue.use(VueRouter)
 let router = new VueRouter({
     mode: 'history',
     routes: [
+        
         {
           path: "/admin",
           redirect: "/admin/dashboard",
           component: Admin,
           children: [
+            {
+                path: "/admin/users",
+                component:Users,
+            },
+            {
+                path: "/admin/permissions",
+                component:Permissions,
+            },
             {
               path: "/admin/dashboard",
               component: Dashboard,
@@ -51,6 +61,10 @@ let router = new VueRouter({
               path: "/admin/maps",
               component: Maps,
             },
+            {
+                path: "/admin/users",
+                component: Users,
+              },
           ],
         },
         {
@@ -78,7 +92,7 @@ let router = new VueRouter({
         },
         {
           path: "/",
-          component: Index,
+          component: Admin,
         },
         { path: "*", redirect: "/" },
       ]
@@ -93,6 +107,7 @@ let router = new VueRouter({
       }
       next('/login')
     } else {
+      store.dispatch('logout');
       next()
     }
   })

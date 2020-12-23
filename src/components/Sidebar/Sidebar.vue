@@ -18,7 +18,7 @@
         class="md:block text-left md:pb-2 text-gray-700 mr-0 inline-block whitespace-no-wrap text-sm uppercase font-bold p-4 px-0"
         to="/"
       >
-        Vue Notus
+        Gray Projects
       </router-link>
       <!-- User -->
       <ul class="md:hidden items-center flex flex-wrap list-none">
@@ -68,6 +68,65 @@
             />
           </div>
         </form>
+        <!-- Divider -->
+        <hr class="my-4 md:min-w-full" />
+        <!-- Heading -->
+        <h6
+          class="md:min-w-full text-gray-600 text-xs uppercase font-bold block pt-1 pb-4 no-underline"
+        >
+          ข้อมูลผู้ใช้งาน
+        </h6>
+        <!-- Navigation -->
+
+        <ul class="md:flex-col md:min-w-full flex flex-col list-none">
+          <li class="items-center">
+            <router-link
+              to="/admin/users"
+              v-slot="{ href, route, navigate, isActive }"
+            >
+              <a
+                :href="href"
+                @click="navigate"
+                class="text-xs uppercase py-3 font-bold block"
+                :class="[
+                  isActive
+                    ? 'text-green-500 hover:text-green-600'
+                    : 'text-gray-800 hover:text-gray-600',
+                ]"
+              >
+                <i
+                  class="fas fa-tv mr-2 text-sm"
+                  :class="[isActive ? 'opacity-75' : 'text-gray-400']"
+                ></i>
+                กำหนดผู้ใช้งาน
+              </a>
+            </router-link>
+          </li>
+
+          <li class="items-center">
+            <router-link
+              to="/admin/permissions"
+              v-slot="{ href, route, navigate, isActive }"
+            >
+              <a
+                :href="href"
+                @click="navigate"
+                class="text-xs uppercase py-3 font-bold block"
+                :class="[
+                  isActive
+                    ? 'text-green-500 hover:text-green-600'
+                    : 'text-gray-800 hover:text-gray-600',
+                ]"
+              >
+                <i
+                  class="fas fa-tv mr-2 text-sm"
+                  :class="[isActive ? 'opacity-75' : 'text-gray-400']"
+                ></i>
+                กำหนดสิทธิ์การใช้งาน
+              </a>
+            </router-link>
+          </li>
+        </ul>
 
         <!-- Divider -->
         <hr class="my-4 md:min-w-full" />
@@ -356,7 +415,7 @@ export default {
     };
   },
   methods: {
-    toggleCollapseShow: function (classes) {
+    toggleCollapseShow: function(classes) {
       this.collapseShow = classes;
     },
   },

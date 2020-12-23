@@ -17,33 +17,31 @@
       }"
     >
       <a
-        href="javascript:void(0);"
+      v-on:click="toggleModal()"
         class="text-sm py-2 px-4 font-normal block w-full whitespace-no-wrap bg-transparent text-gray-800"
       >
-        Action
+        แก้ไข
       </a>
       <a
         href="javascript:void(0);"
         class="text-sm py-2 px-4 font-normal block w-full whitespace-no-wrap bg-transparent text-gray-800"
       >
-        Another action
-      </a>
-      <a
-        href="javascript:void(0);"
-        class="text-sm py-2 px-4 font-normal block w-full whitespace-no-wrap bg-transparent text-gray-800"
-      >
-        Something else here
+        ลบ
       </a>
     </div>
   </div>
+  
 </template>
 <script>
 import { createPopper } from "@popperjs/core";
+
 
 export default {
   data() {
     return {
       dropdownPopoverShow: false,
+      toggleEditUser: true,
+
     };
   },
   methods: {
@@ -58,6 +56,14 @@ export default {
         });
       }
     },
+    toggleModal: function(){
+     
+      
+    }
+
+  
   },
+
+ 
 };
 </script>
