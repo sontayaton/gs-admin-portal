@@ -21,6 +21,11 @@ import Axios from 'axios'
 import router from './router'
 
 // routes
+import VueConfirmDialog from 'vue-confirm-dialog'
+
+Vue.use(VueConfirmDialog)
+Vue.component('vue-confirm-dialog', VueConfirmDialog.default)
+
 
 
 

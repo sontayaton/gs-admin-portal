@@ -78,16 +78,19 @@
             <user-item
               v-for="user in users"
               v-bind:key="user.id"
-              v-bind:username="user.username"
-              v-bind:role="user.role"
-              v-bind:status="user.status"
+              v-bind:user="user"
+              v-bind:policies="policies"
+              :users.sync="users"
             >
             </user-item>
           </tbody>
         </table>
       </div>
     </div>
-    <user-form v-bind:modalTitle="modalTitle" v-bind:showModal="showModal"/>
+    <!-- <user-form  :showModal.sync="showModal"  :users.sync="users" v-bind:modalTitle="modalTitle" v-bind:policies="policies" v-bind:mode="mode" v-bind:userData="userData" /> -->
+  
+   <user-form :showModal.sync="showModal" :users.sync="users" v-bind:policies="policies" v-bind:modalTitle="modalTitle" v-bind:userData="this.userData" v-bind:mode="mode" v-bind:disabled="false"/>
+    
   </div>
 </template>
 <script>
@@ -101,13 +104,18 @@ export default {
   data() {
     return {
       showModal: false,
-      users: [
-        { id: 1, username: "username", role: "superuser", status: "enable" },
-        { id: 1, username: "username", role: "superuser", status: "disable" },
-        { id: 1, username: "username", role: "superuser", status: "enable" },
-      ],
       bus: new Vue(),
-      modalTitle:"ข้อมูลผู้ใช้งาน"
+      modalTitle:"ข้อมูลผู้ใช้งาน",
+      mode:"add",
+      userData:{
+
+        username: "",
+        policy:"สิทธิ์การใช้งาน",
+        status:"สถานะ"
+
+
+      },
+      
     };
   },
   components: {
@@ -115,7 +123,8 @@ export default {
     UserForm
   },
   props: {
-    
+    users: Array,
+    policies:Array,
     color: {
       default: "light",
       validator: function(value) {
@@ -127,7 +136,8 @@ export default {
   methods: {
     toggleModal: function(){
       this.showModal = !this.showModal;
-      this.modalTitle = "เพิ่มข้อมูลผู้ใช้งาน"
+      this.modalTitle = "เพิ่มข้อมูลผู้ใช้งาน";
+      this.mode = "add";
     }
   },
 };
