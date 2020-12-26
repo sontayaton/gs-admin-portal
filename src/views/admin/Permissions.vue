@@ -1,19 +1,19 @@
 <template>
   <div class="flex flex-wrap mt-4">
-    <div class="w-full mb-12 px-4">
-      <card-table />
-    </div>
-    <div class="w-full mb-12 px-4">
-      <card-table color="dark" />
+   
+
+    <div class="w-full mb-12 px-4 bg-gray-100"  data-app>
+      <crud-table />
     </div>
   </div>
 </template>
 <script>
-import CardTable from "@/components/Cards/CardTable.vue";
+
+import CrudTable from "@/components/Tables/CrudTable.vue";
 
 export default {
   components: {
-    CardTable,
+    CrudTable
   },
 };
 </script>

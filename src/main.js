@@ -6,9 +6,15 @@ import VueRouter from "vue-router";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "@/assets/styles/tailwind.css";
 
+
 // mouting point for the whole app
 
 import App from "@/App.vue";
+
+
+//Vuetify
+
+import vuetify from '@/plugins/vuetify'
 
 
 
@@ -45,9 +51,11 @@ Vue.config.productionTip = false;
 
 Vue.use(VueRouter);
 
+//Vue.use(vuetify);
 
 new Vue({
   router,
   store,
+  vuetify,
   render: (h) => h(App),
 }).$mount("#app");

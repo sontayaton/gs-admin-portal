@@ -14,6 +14,7 @@
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "5.14.0",
+    "@mdi/font": "^5.8.55",
     "@popperjs/core": "2.5.1",
     "@tailwindcss/custom-forms": "0.2.1",
     "axios": "^0.21.0",
@@ -21,10 +22,12 @@
     "core-js": "3.6.5",
     "gulp": "4.0.2",
     "gulp-append-prepend": "1.0.8",
+    "material-design-icons-iconfont": "^6.1.0",
     "tailwindcss": "1.8.10",
     "vue": "2.6.12",
     "vue-confirm-dialog": "^1.0.2",
     "vue-router": "3.4.3",
+    "vuetify": "^2.4.0",
     "vuex": "^3.6.0"
   },
   "devDependencies": {
@@ -32,8 +35,12 @@
     "@vue/cli-plugin-eslint": "4.5.6",
     "@vue/cli-service": "4.5.6",
     "babel-eslint": "10.1.0",
+    "deepmerge": "^4.2.2",
     "eslint": "6.8.0",
     "eslint-plugin-vue": "6.2.2",
+    "sass": "^1.30.0",
+    "sass-loader": "^10.1.0",
+    "vue-cli-plugin-vuetify": "^2.0.8",
     "vue-template-compiler": "2.6.12"
   },
   "eslintConfig": {
